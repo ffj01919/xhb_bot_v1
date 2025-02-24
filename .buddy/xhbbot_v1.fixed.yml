@@ -4,3 +4,22 @@
     refs:
     - refs/heads/main
   fail_on_prepare_env_warning: true
+  actions:
+  - action: '        python 小伙伴bot_v1.py'
+    type: BUILD
+    docker_image_name: library/python
+    docker_image_tag: "3.13"
+    execute_commands:
+    - "pipeline:"
+    - "  deploy:"
+    - "    steps:"
+    - "    - name: xhbbot_v1"
+    - "      agent:"
+    - "        type: 'docker'"
+    - "        image: 'python:3.9'"
+    - "      command: >"
+    - '        pip install -r requirements.txt &&'
+    - '        python 小伙伴bot_v1.py'
+    cached_dirs:
+    - /root/.cache/pip
+    shell: BASH
