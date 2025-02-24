@@ -1,0 +1,6 @@
+- pipeline: xhbbot_v1
+  events:
+  - type: PUSH
+    refs:
+    - refs/heads/main
+  fail_on_prepare_env_warning: true
