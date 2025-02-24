@@ -8,7 +8,7 @@
   - action: '        python 小伙伴bot_v1.py'
     type: BUILD
     docker_image_name: library/python
-    docker_image_tag: "3.13"
+    docker_image_tag: 3.9.0
     execute_commands:
     - "pipeline:"
     - "  deploy:"
